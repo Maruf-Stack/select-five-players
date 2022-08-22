@@ -5,12 +5,21 @@ function selectedPlayers(players) {
 
     for (let i = 0; i < players.length; i++) {
 
+        const clickedValue = 5;
         const name = players[i].name;
-        const tr = document.createElement("tr");
-        tr.innerHTML = `<td>${i + 1}. ${name}</td>`;
-        allPlayer.appendChild(tr);
+        if (i == clickedValue) {
+            alert('you cannot select more than 5 players')
+        } else {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `<td>${i + 1}. ${name}</td>`;
+            allPlayer.appendChild(tr);
+
+        }
+
 
     }
+
+
 }
 function selectPlayer(element) {
     const playerName = element.parentNode.children[0].innerText;
@@ -19,4 +28,5 @@ function selectPlayer(element) {
     }
     playersArr.push(playerNameobj);
     selectedPlayers(playersArr);
+
 }
