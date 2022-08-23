@@ -14,11 +14,10 @@ function selectedPlayers(players) {
             tr.innerHTML = `<td>${i + 1}. ${name}</td>`;
             allPlayer.appendChild(tr);
 
+
         }
 
-
     }
-
 
 }
 function selectPlayer(element) {
@@ -29,4 +28,11 @@ function selectPlayer(element) {
     playersArr.push(playerNameobj);
     selectedPlayers(playersArr);
 
+}
+
+
+function getLength(idName) {
+    const allTd = document.getElementById(idName);
+    const allTdLength = allTd.children.length;
+    return allTdLength;
 }
